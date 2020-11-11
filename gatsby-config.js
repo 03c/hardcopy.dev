@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `hardcopy.dev`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Chris Child`,
+      summary: `who writes code sometimes.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `A technical blog, mainly for my own reference`,
+    siteUrl: `https://hardcopy.dev`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `cchild_`,
     },
   },
   plugins: [
