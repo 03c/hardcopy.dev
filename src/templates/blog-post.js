@@ -5,10 +5,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import { Disqus } from 'gatsby-plugin-disqus'
+
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`;
   const { previous, next } = data
+
+  let disqusConfig = {
+    url: `${siteUrl+location.pathname}`,
+    identifier: post.id,
+    title: post.title,
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -59,6 +68,7 @@ const BlogPostTemplate = ({ data, location }) => {
             )}
           </li>
         </ul>
+        <Disqus config={disqusConfig} />
       </nav>
     </Layout>
   )
