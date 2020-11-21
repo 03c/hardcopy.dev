@@ -84,7 +84,8 @@ export const pageQuery = graphql`
   ) {
     site {
       siteMetadata {
-        title
+        title,
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
