@@ -74,6 +74,9 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/hardcopy-logo.svg`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
         crossOrigin: `use-credentials`,
       },
     },
