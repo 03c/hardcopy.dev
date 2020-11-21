@@ -5,8 +5,11 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import { CommentCount } from 'gatsby-plugin-disqus'
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`;
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -31,6 +34,12 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
+          let disqusConfig = {
+            url: `${siteUrl+post.fields.slug}`,
+            identifier: post.id,
+            title: title,
+          }
+
           return (
             <li key={post.fields.slug}>
               <article
@@ -44,7 +53,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post.frontmatter.date} | <CommentCount config={disqusConfig} placeholder={'0 Comments'} /></small>
                 </header>
                 <section>
                   <p
@@ -69,7 +78,8 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        title,
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
