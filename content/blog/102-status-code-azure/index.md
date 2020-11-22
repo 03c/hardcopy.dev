@@ -1,6 +1,6 @@
 ---
 title: You can't use a 102 http status code in Azure
-date: "2019-06-21T10:49:18Z"
+date: '2019-06-21T10:49:18Z'
 ---
 
 You can't use a 102 status code because Azure will always wait for a follow up code. In my code I changed it to a 202 Accepted instead.

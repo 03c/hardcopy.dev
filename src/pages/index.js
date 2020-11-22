@@ -1,15 +1,15 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 import { CommentCount } from 'gatsby-plugin-disqus'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`;
+  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }) => {
           const title = post.frontmatter.title || post.fields.slug
 
           let disqusConfig = {
-            url: `${siteUrl+post.fields.slug}`,
+            url: `${siteUrl + post.fields.slug}`,
             identifier: post.id,
             title: title,
           }
@@ -53,7 +53,14 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date} | <CommentCount config={disqusConfig} placeholder={'0 Comments'} /> | {post.fields.readingTime.text}</small>
+                  <small>
+                    {post.frontmatter.date} |{' '}
+                    <CommentCount
+                      config={disqusConfig}
+                      placeholder={'0 Comments'}
+                    />{' '}
+                    | {post.fields.readingTime.text}
+                  </small>
                 </header>
                 <section>
                   <p
@@ -78,7 +85,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title,
+        title
         siteUrl
       }
     }

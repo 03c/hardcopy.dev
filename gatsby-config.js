@@ -15,8 +15,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `hardcopy-dev`
-      }
+        shortname: `hardcopy-dev`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,

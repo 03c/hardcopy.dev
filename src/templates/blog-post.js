@@ -1,20 +1,20 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`;
+  const siteUrl = data.site.siteMetadata?.siteUrl || `Blog`
   const { previous, next } = data
 
   let disqusConfig = {
-    url: `${siteUrl+location.pathname}`,
+    url: `${siteUrl + location.pathname}`,
     identifier: post.id,
     title: post.title,
   }
@@ -32,7 +32,11 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date} | <CommentCount config={disqusConfig} placeholder={'0 Comments'} /> | {post.fields.readingTime.text}</p>
+          <p>
+            {post.frontmatter.date} |{' '}
+            <CommentCount config={disqusConfig} placeholder={'0 Comments'} /> |{' '}
+            {post.fields.readingTime.text}
+          </p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -84,7 +88,7 @@ export const pageQuery = graphql`
   ) {
     site {
       siteMetadata {
-        title,
+        title
         siteUrl
       }
     }

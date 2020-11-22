@@ -7,7 +7,7 @@ Not 100% sure when this started, but I eventually got annoyed by Visual Studio a
 
 ReSharper is `Alt + Enter` Visual Studio is `CTRL + .`
 
-Visual Studio was warning for some potential code problems and I want ReSharper to handle it all. Specifically it was the "Expression value is never used" warning, which wants you to *discard* the return value using the [_ C# 7.0 discard](https://docs.microsoft.com/en-us/dotnet/csharp/discards). It gets annoying not knowing which keyboard shortcut the squiggle wants.\n\nSo eventually I found the setting, which is in the ReSharper settings rather than Visual Studio settings. In Visual Studio 2019 the exact location is as follows
+Visual Studio was warning for some potential code problems and I want ReSharper to handle it all. Specifically it was the "Expression value is never used" warning, which wants you to _discard_ the return value using the [\_ C# 7.0 discard](https://docs.microsoft.com/en-us/dotnet/csharp/discards). It gets annoying not knowing which keyboard shortcut the squiggle wants.\n\nSo eventually I found the setting, which is in the ReSharper settings rather than Visual Studio settings. In Visual Studio 2019 the exact location is as follows
 
 ```
 Extensions —> ReSharper —> Options —> Code Inspection —> Settings —> Merge Visual Studio Light Bulb actions into ReSharper bulb.
