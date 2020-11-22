@@ -1,5 +1,4 @@
-![Gatsby Publish](https://github.com/christopherchild/hardcopy.dev/workflows/Gatsby%20Publish/badge.svg?branch=dev)
-![Cloudflare Purge Cache](https://github.com/christopherchild/hardcopy.dev/workflows/Cloudflare%20Purge%20Cache/badge.svg)
+![Publish](https://github.com/christopherchild/hardcopy.dev/workflows/Publish/badge.svg)
 
 # Hardcopy.dev Blog
 
