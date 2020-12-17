@@ -1,5 +1,5 @@
 ---
-  title: "WHat to do when your Unraid flash drive dies..."
+  title: "What to do when your Unraid flash drive dies..."
   date: "2020-12-17T17:24:34Z"
 ---
 
